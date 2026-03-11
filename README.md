@@ -77,18 +77,18 @@ int main() {
     scanf("%lld %lld", &a, &b);
     printf("Enter the base point G (x and y): ");
     scanf("%lld %lld", &G.x, &G.y);
-    printf("Enter Yuga's private key: ");
+    printf("Enter ARUL's private key: ");
     scanf("%lld", &privateA);
-    printf("Enter Bharathi's private key: ");
+    printf("Enter KUMARAN's private key: ");
     scanf("%lld", &privateB);
     publicA = scalarMultiplication(G, privateA, a, p);
     publicB = scalarMultiplication(G, privateB, a, p);
-    printf("Yuga's public key: (%lld, %lld)\n", publicA.x, publicA.y);
-    printf("Bharathi's public key: (%lld, %lld)\n", publicB.x, publicB.y);
+    printf("ARUL's public key: (%lld, %lld)\n", publicA.x, publicA.y);
+    printf("KUMARAN's public key: (%lld, %lld)\n", publicB.x, publicB.y);
     sharedSecretA = scalarMultiplication(publicB, privateA, a, p);
     sharedSecretB = scalarMultiplication(publicA, privateB, a, p);
-    printf("Shared secret computed by Yuga: (%lld, %lld)\n", sharedSecretA.x, sharedSecretA.y);
-    printf("Shared secret computed by Bharathi: (%lld, %lld)\n", sharedSecretB.x, sharedSecretB.y);
+    printf("Shared secret computed by ARUL: (%lld, %lld)\n", sharedSecretA.x, sharedSecretA.y);
+    printf("Shared secret computed by KUMARAN: (%lld, %lld)\n", sharedSecretB.x, sharedSecretB.y);
     if (sharedSecretA.x == sharedSecretB.x && sharedSecretA.y == sharedSecretB.y)
         printf("Key exchange successful. Both shared secrets match!\n");
     else
